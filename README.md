@@ -12,3 +12,7 @@ FleetFlow AI is an AI-powered logistics and fleet management platform designed t
 ### Day 2
 - Implemented Login Screen.
 - Implemented OTP Verification Screen.
+
+### Day 3
+- Updated Login Screen.
+- Fixed minute errors.
