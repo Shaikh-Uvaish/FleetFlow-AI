@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/theme/app_colors.dart';
+import 'otp_verification_screen.dart';
 
 /// Driver Sign In screen (matches the Stitch design).
 ///
@@ -54,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // ---------- actions ----------
 
-    void _submit() {
+  void _submit() {
     FocusScope.of(context).unfocus();
     if (!_formKey.currentState!.validate()) return;
 
@@ -63,6 +65,32 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _comingSoon(String feature) => _showMessage('$feature is coming soon.');
+
+  
+  void _startSmsSignIn() {
+    final value = _identifierController.text.trim();
+    final isPhone =
+        value.isNotEmpty &&
+        !value.contains('@') &&
+        _validateIdentifier(value) == null;
+
+    if (!isPhone) {
+      _showMessage(
+        'Enter your registered phone number above to get an SMS code.',
+      );
+      return;
+    }
+
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => OtpVerificationScreen(
+          maskedPhone: maskPhoneNumber(value),
+          // TODO(api): comes from the backend. Demo value so the screen matches the design.
+          assignedUnit: 'Driver Ray Morales (#DRV-904)',
+        ),
+      ),
+    );
+  }
 
   void _showMessage(String message) {
     ScaffoldMessenger.of(context)
@@ -86,8 +114,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ScrollViewKeyboardDismissBehavior.onDrag,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: ConstrainedBox(
-                    constraints:
-                        BoxConstraints(minHeight: constraints.maxHeight),
+                    constraints: BoxConstraints(
+                      minHeight: constraints.maxHeight,
+                    ),
                     child: IntrinsicHeight(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -131,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: _QuickSignInButton(
                                   icon: Icons.sms_outlined,
                                   label: 'One-Time SMS Code',
-                                  onTap: () => _comingSoon('SMS sign-in'),
+                                  onTap: _startSmsSignIn,
                                 ),
                               ),
                               const SizedBox(width: 16),
@@ -139,7 +168,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: _QuickSignInButton(
                                   icon: Icons.qr_code_scanner_rounded,
                                   label: 'Terminal Badge / QR',
-                                  onTap: () => _comingSoon('Badge / QR sign-in'),
+                                  onTap: () =>
+                                      _comingSoon('Badge / QR sign-in'),
                                 ),
                               ),
                             ],
