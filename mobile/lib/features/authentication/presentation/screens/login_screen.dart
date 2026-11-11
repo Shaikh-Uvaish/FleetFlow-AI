@@ -224,7 +224,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               suffixIcon: _identifierValid
                   ? const Icon(
-                      Icons.check_circle_outline_rounded,
+                      Icons.check_circle_rounded,
                       color: AppColors.success,
                     )
                   : null,
@@ -506,15 +506,19 @@ class _OrDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(child: Divider(height: 1, color: AppColors.border)),
+        // The line takes two parts of the width, the text takes one part.
+        Expanded(flex: 2, child: Divider(height: 1, color: AppColors.border)),
         SizedBox(width: 16),
-        Text(
-          'OR QUICK SIGN IN WITH',
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w700,
-            letterSpacing: 0.8,
-            color: AppColors.slate,
+        Expanded(
+          flex: 1,
+          child: Text(
+            'OR QUICK SIGN IN WITH',
+            style: TextStyle(
+              fontSize: 11.5,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.5,
+              color: AppColors.slate,
+            ),
           ),
         ),
       ],
