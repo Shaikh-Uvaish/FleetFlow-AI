@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'forgot_password_screen.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/theme/app_colors.dart';
 import 'otp_verification_screen.dart';
@@ -295,23 +295,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               TextButton(
-                onPressed: () => _comingSoon('Forgot PIN'),
-                style: TextButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 4),
-                  minimumSize: const Size(0, 36),
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                child: const Text(
-                  'Forgot PIN?',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.slate,
-                    decoration: TextDecoration.underline,
-                    decorationColor: AppColors.slate,
-                  ),
-                ),
-              ),
+  onPressed: () => Navigator.of(context).push(
+    MaterialPageRoute(builder: (_) => const ForgotPasswordScreen()),
+  ),
+  style: TextButton.styleFrom(
+    padding: const EdgeInsets.symmetric(horizontal: 4),
+    minimumSize: const Size(0, 36),
+    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+  ),
+  child: const Text(
+    'Forgot PIN?',
+    style: TextStyle(
+      fontSize: 15,
+      fontWeight: FontWeight.w600,
+      color: AppColors.slate,
+      decoration: TextDecoration.underline,
+      decorationColor: AppColors.slate,
+    ),
+  ),
+),
             ],
           ),
         ],

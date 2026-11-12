@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../features/authentication/presentation/screens/forgot_password_screen.dart';
 import '../features/authentication/presentation/screens/login_screen.dart';
 import '../features/authentication/presentation/screens/otp_verification_screen.dart';
 
@@ -11,12 +11,13 @@ class ScreenPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Name shown in the list : the screen it opens
-    final screens = <String, Widget>{
+        final screens = <String, Widget>{
       'Login': const LoginScreen(),
       'OTP Verification': const OtpVerificationScreen(
         maskedPhone: '+1 (555) •••-2834',
         assignedUnit: 'Driver Ray Morales (#DRV-904)',
       ),
+      'Forgot Password': const ForgotPasswordScreen(),
     };
 
     return Scaffold(
