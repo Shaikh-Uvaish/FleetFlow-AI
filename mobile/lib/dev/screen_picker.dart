@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../features/authentication/presentation/screens/forgot_password_screen.dart';
 import '../features/authentication/presentation/screens/login_screen.dart';
 import '../features/authentication/presentation/screens/otp_verification_screen.dart';
-
+import '../features/home/presentation/screens/home_screen.dart';
 // A simple list of all finished screens, so you can open any one with a tap.
 // Every day, add one import and one line in the list below.
 class ScreenPicker extends StatelessWidget {
@@ -18,6 +18,7 @@ class ScreenPicker extends StatelessWidget {
         assignedUnit: 'Driver Ray Morales (#DRV-904)',
       ),
       'Forgot Password': const ForgotPasswordScreen(),
+      'Driver Home': const HomeScreen(),
     };
 
     return Scaffold(
