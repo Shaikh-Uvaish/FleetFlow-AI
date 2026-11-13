@@ -20,3 +20,7 @@ FleetFlow AI is an AI-powered logistics and fleet management platform designed t
 ### Day 4
 - Implemented Forgot Password Screen.
 - Updated Screen Picker.
+
+### Day 5
+- Implemented Driver Home Screen.
+- Worked on home_screen.dart file.
