@@ -24,3 +24,8 @@ FleetFlow AI is an AI-powered logistics and fleet management platform designed t
 ### Day 5
 - Implemented Driver Home Screen.
 - Worked on home_screen.dart file.
+
+### Day 6
+- Implemented Trip Details Screen.
+- Worked on 3 different files.
+- Connected Driver Home Screen with Trip Details Screen.
