@@ -3,6 +3,7 @@ import '../features/authentication/presentation/screens/forgot_password_screen.d
 import '../features/authentication/presentation/screens/login_screen.dart';
 import '../features/authentication/presentation/screens/otp_verification_screen.dart';
 import '../features/home/presentation/screens/home_screen.dart';
+import '../features/trips/presentation/screens/trip_details_screen.dart';
 // A simple list of all finished screens, so you can open any one with a tap.
 // Every day, add one import and one line in the list below.
 class ScreenPicker extends StatelessWidget {
@@ -19,6 +20,7 @@ class ScreenPicker extends StatelessWidget {
       ),
       'Forgot Password': const ForgotPasswordScreen(),
       'Driver Home': const HomeScreen(),
+      'Trip Details': const TripDetailsScreen(),
     };
 
     return Scaffold(

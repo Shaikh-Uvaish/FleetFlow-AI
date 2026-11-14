@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import '../../../trips/presentation/screens/trip_details_screen.dart';
 import '../../../../core/theme/app_colors.dart';
 
 // Colors used only on this dark screen.
@@ -40,7 +40,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _tab = 0; // selected bottom tab (0 = Home)
+    final int _tab = 0; // selected bottom tab (0 = Home)
 
   final _tabLabels = ['Home', 'My Trips', 'Alerts', 'Profile'];
   final _tabIcons = [
@@ -139,8 +139,11 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Row(
         children: [
-          const Icon(Icons.local_shipping_outlined,
-              color: AppColors.lime, size: 30),
+          const Icon(
+            Icons.local_shipping_outlined,
+            color: AppColors.lime,
+            size: 30,
+          ),
           const SizedBox(width: 14),
           const Text(
             'FleetFlow AI',
@@ -179,7 +182,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   TextSpan(
                     text: 'Geotab ELD Paired',
                     style: _mono.copyWith(
-                        fontSize: 13, fontWeight: FontWeight.w700),
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                   const TextSpan(
                     text: '  •  Live Sync OK',
@@ -246,8 +251,10 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(width: 8),
               // "On Duty" pill
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 5,
+                ),
                 decoration: BoxDecoration(
                   color: AppColors.lime.withAlpha(30),
                   borderRadius: BorderRadius.circular(999),
@@ -338,8 +345,11 @@ class _HomeScreenState extends State<HomeScreen> {
             number: '2',
             title: 'Completed',
             sub: 'Today',
-            icon: const Icon(Icons.check_circle_outline,
-                color: _green, size: 18),
+            icon: const Icon(
+              Icons.check_circle_outline,
+              color: _green,
+              size: 18,
+            ),
           ),
         ),
         const SizedBox(width: 10),
@@ -349,8 +359,11 @@ class _HomeScreenState extends State<HomeScreen> {
             title: 'Pending',
             sub: 'PTI, Fuel, Scale',
             numberColor: AppColors.warning,
-            icon: const Icon(Icons.pending_actions,
-                color: AppColors.warning, size: 18),
+            icon: const Icon(
+              Icons.pending_actions,
+              color: AppColors.warning,
+              size: 18,
+            ),
           ),
         ),
       ],
@@ -417,20 +430,27 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Row(
                 children: [
-                  const Icon(Icons.local_shipping_outlined,
-                      size: 18, color: _muted),
+                  const Icon(
+                    Icons.local_shipping_outlined,
+                    size: 18,
+                    color: _muted,
+                  ),
                   const SizedBox(width: 8),
                   Text(
                     '#TRP-4092',
                     style: _mono.copyWith(
-                        fontSize: 15, fontWeight: FontWeight.w700),
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ],
               ),
               // "High Value Reefer" pill
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 5,
+                ),
                 decoration: BoxDecoration(
                   color: _red.withAlpha(25),
                   borderRadius: BorderRadius.circular(999),
@@ -499,7 +519,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(child: _tripStat('Est. Transit', '11h 45m', _text)),
                 Container(width: 1, height: 36, color: _line),
                 Expanded(
-                    child: _tripStat('Reefer Temp', '-20°F', AppColors.lime)),
+                  child: _tripStat('Reefer Temp', '-20°F', AppColors.lime),
+                ),
               ],
             ),
           ),
@@ -525,7 +546,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Text(
                     "Cascadia #9410 + 53' Reefer #TR-882",
                     style: _mono.copyWith(
-                        fontSize: 13, fontWeight: FontWeight.w700),
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ],
@@ -536,7 +559,9 @@ class _HomeScreenState extends State<HomeScreen> {
             width: double.infinity,
             height: 56,
             child: FilledButton(
-              onPressed: () => _showMessage('Trip details is coming soon.'),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const TripDetailsScreen()),
+              ),
               style: FilledButton.styleFrom(
                 backgroundColor: AppColors.lime,
                 foregroundColor: AppColors.charcoal,
@@ -590,7 +615,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: CircleAvatar(radius: 4, backgroundColor: color),
                   ),
                 ),
-                if (showLine) Expanded(child: Container(width: 2, color: _line)),
+                if (showLine)
+                  Expanded(child: Container(width: 2, color: _line)),
               ],
             ),
           ),
@@ -668,8 +694,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
                   color: _line,
                   borderRadius: BorderRadius.circular(999),
@@ -694,8 +722,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text(
                       'Atlanta, GA → Charlotte, NC',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
                     SizedBox(height: 2),
                     Text(
@@ -752,8 +782,10 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Text(
                 title,
-                style:
-                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               const SizedBox(height: 2),
               Text(sub, style: const TextStyle(fontSize: 14, color: _muted)),
