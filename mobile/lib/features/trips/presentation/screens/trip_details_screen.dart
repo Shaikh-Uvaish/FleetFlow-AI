@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'trip_acceptance_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -124,9 +124,11 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
       ..showSnackBar(SnackBar(content: Text(message)));
   }
 
-  void _accept() {
-    // TODO(api): send "accept" to the backend, then open the Trip Confirmed screen.
-    _showMessage('Trip accepted. Backend is not connected yet.');
+    void _accept() {
+    // TODO(api): send "accept" to the backend first.
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (_) => const TripAcceptanceScreen()),
+    );
   }
 
   void _confirmDecline() {
