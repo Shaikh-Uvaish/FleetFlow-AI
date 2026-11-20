@@ -3,6 +3,7 @@ import '../features/authentication/presentation/screens/forgot_password_screen.d
 import '../features/authentication/presentation/screens/login_screen.dart';
 import '../features/authentication/presentation/screens/otp_verification_screen.dart';
 import '../features/home/presentation/screens/home_screen.dart';
+import '../features/home/presentation/screens/driver_home_screen.dart';
 import '../features/trips/presentation/screens/trip_acceptance_screen.dart';
 
 import '../features/trips/presentation/screens/trip_details_screen.dart';
@@ -22,6 +23,7 @@ class ScreenPicker extends StatelessWidget {
       ),
       'Forgot Password': const ForgotPasswordScreen(),
       'Driver Home': const HomeScreen(),
+      'New Driver Home': const DriverHomeScreen(),
       'Trip Details': const TripDetailsScreen(),
       'Trip Confirmed': const TripAcceptanceScreen(),
     };
