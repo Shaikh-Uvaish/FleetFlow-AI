@@ -4,7 +4,7 @@
 
 FleetFlow AI is an AI-powered logistics and fleet management platform designed to simplify transportation operations through intelligent automation, real-time tracking, and optimized fleet management.
 
-## 📱Development Progress
+## 📱 Development Progress
 
 ### Day 1
 - Initialized Flutter project and configured the development environment.
@@ -15,7 +15,7 @@ FleetFlow AI is an AI-powered logistics and fleet management platform designed t
 
 ### Day 3
 - Updated Login Screen.
-- Fixed minute errors.
+- Fixed minor errors.
 
 ### Day 4
 - Implemented Forgot Password Screen.
@@ -34,3 +34,9 @@ FleetFlow AI is an AI-powered logistics and fleet management platform designed t
 - Added trip_confirmed_screen.dart file.
 - Worked on Trip Details Screen for completing confirmation.
 - Connected Driver Home Screen with Trip Confirmed Screen.
+
+### Day 8
+- Implemented a new Driver Home Screen with an updated light-theme UI.
+- Added driver_home_screen.dart file.
+- Integrated the new screen into Screen Picker.
+- Preserved the existing Driver Home Screen for comparison.
